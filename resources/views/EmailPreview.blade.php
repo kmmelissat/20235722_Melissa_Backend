@@ -125,12 +125,12 @@
                     </thead>
                     <tbody>
                         @php
-                            $total = 0; // Initialize total variable
+                            $total = 0; 
                         @endphp
                         @foreach ($products as $product)
                             @php
                                 $subtotal = $product['price'] * $product['quantity'];
-                                $total += $subtotal; // Accumulate total
+                                $total += $subtotal; 
                             @endphp
                             <tr>
                                 <td>{{ $product['name'] }}</td>
@@ -144,7 +144,7 @@
                     <tfoot>
                         <tr>
                             <th colspan="3">Total</th>
-                            <th>${{ number_format($total, 2) }}</th> <!-- Display total -->
+                            <th>${{ number_format($total, 2) }}</th> 
                         </tr>
                     </tfoot>
                 </table>

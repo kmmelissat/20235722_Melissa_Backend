@@ -11,9 +11,9 @@ class EmailPreviewController extends Controller
            'customer' => ['required', 'string'],
            'email' => ['required', 'email'], // Fixed typo here
            'payment_method' => ['required', 'in:1,2,3'],
-           'products' => ['required', 'array'], // Added array validation
-           'product.*.name' => ['required', 'string', 'max:50'], // Added validation for product name
-           'product.*.price' => ['required', 'numeric', 'gt:0'], // Added validation for product price
+           'products' => ['required', 'array'], 
+           'product.*.name' => ['required', 'string', 'max:50'], 
+           'product.*.price' => ['required', 'numeric', 'gt:0'], 
            'products.*.quantity' => ['required', 'gte:1','integer'], // Fixed typo here
        ]);
 
