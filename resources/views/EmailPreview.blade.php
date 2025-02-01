@@ -124,27 +124,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php
-                            $total = 0; 
-                        @endphp
                         @foreach ($products as $product)
-                            @php
-                                $subtotal = $product['price'] * $product['quantity'];
-                                $total += $subtotal; 
-                            @endphp
                             <tr>
                                 <td>{{ $product['name'] }}</td>
                                 <td>{{ $product['quantity'] }}</td>
-                                <td>${{ number_format($product['price'], 2) }}</td>
-                                <td>${{ number_format($subtotal, 2) }}</td>
+                                <td>${{$product['price']}}</td>
+                                <td>${{$product['subtotal']}}</td>
                             </tr>
                         @endforeach
-                        <!-- Agregar más filas según sea necesario -->
                     </tbody>
                     <tfoot>
                         <tr>
                             <th colspan="3">Total</th>
-                            <th>${{ number_format($total, 2) }}</th> 
+                            <th>${{$total}}</th> 
                         </tr>
                     </tfoot>
                 </table>
@@ -155,7 +147,7 @@
             <p>¡Gracias por confiar en nosotros!</p>
         </div>
         <div class="footer">
-            <p>&copy; 2025 Melissa's. Todos los derechos reservados.</p>
+            <p>&copy; {{ now()->format('Y') }} Melissa's. Todos los derechos reservados.</p>
             <p><a href="[URL Política de Privacidad]">Política de Privacidad</a> | <a href="[URL Soporte]">Soporte</a></p>
         </div>
     </div>
