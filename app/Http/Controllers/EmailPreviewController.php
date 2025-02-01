@@ -51,6 +51,7 @@ class EmailPreviewController extends Controller
 
             $total += $subtotal; 
         }
+        
         $data['total'] = number_format($total, 2); 
 
         return view('EmailPreview', $data);
